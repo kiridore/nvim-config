@@ -6,3 +6,6 @@ require("keybindings")
 
 -- 插件管理
 require("plugin")
+
+-- 插件配置
+require('plugin-config.nvim-tree')
