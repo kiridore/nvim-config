@@ -41,8 +41,23 @@ map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
+
 -- <leader> + hjkl 窗口之间跳转
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
+
+
+----------plugin---------
+
+--- nvim-tree
+map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
+
+--- telescope
+map('n', '<leader>e', ":Telescope find_files<CR>", opt)
+map('n', '<leader>fg', ":Telescope live_grep<CR>", opt)
+map('n', '<leader>fb', ":Telescope buffers<CR>", opt)
+map('n', '<leader>fh', ":Telescope help_tags<CR>", opt)
+
+

@@ -53,7 +53,7 @@ vim.bo.autoread = true
 vim.wo.wrap = false
 
 -- 允许隐藏被修改过的buffer
--- vim.o.hidden = true
+vim.o.hidden = true
 
 -- 鼠标支持
 vim.o.mouse = "a"
@@ -76,7 +76,7 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
 -- 是否显示不可见字符
-vim.o.list = false;
+vim.o.list = false
 
 -- 将空格显示为一个点
 vim.o.listchars = "space:·"
@@ -92,3 +92,8 @@ vim.o.showtabline = 2
 
 -- 使用air line（加强状态栏）插件后不在显示vim模式
 vim.o.showmode = false
+
+
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

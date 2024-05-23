@@ -14,14 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- 色彩主题
-    {
-        "xero/miasma.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd("colorscheme miasma")
-        end,
-    },
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
@@ -43,7 +36,37 @@ require("lazy").setup({
     },
     -- 自动括号补全
     {'m4xshen/autoclose.nvim'},
-
+    -- nvim-tree
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+    },
+    -- 模糊文件搜索
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    -- 快捷键绑定查询
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = { }
+    },
+    -- 代码高亮
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- Git支持 :Git
+    {"tpope/vim-fugitive"},
 })
 
 -- 启动插件
