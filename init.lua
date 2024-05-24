@@ -17,4 +17,3 @@ require('plugin-config.cmp')
 
 require('lsp.lua')
 require('lsp.clangd')
-

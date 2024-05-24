@@ -66,6 +66,10 @@ require("lazy").setup({
     },
     -- 代码高亮
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- 显示上下文
+    {"nvim-treesitter/nvim-treesitter-context"},
+    -- 彩色括号
+    {"p00f/nvim-ts-rainbow"},
     -- Git支持 :Git
     {"tpope/vim-fugitive"},
     -- LSP
@@ -87,7 +91,25 @@ require("lazy").setup({
         opts = {},
         config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
-
+    -- snip引擎
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    -- 更好的注释
+    {
+        'numToStr/Comment.nvim',
+        opts = { },
+        lazy = false,
+    },
+    -- blankline
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    -- 滚动条
+    {"dstein64/nvim-scrollview"},
 })
 
 -- 启动插件
@@ -103,3 +125,14 @@ require('mason-lspconfig').setup({
     }
 })
 
+require('lsp_signature').setup({})
+require("luasnip.loaders.from_vscode").lazy_load()
+require("ibl").setup()
+require('scrollview').setup({
+  excluded_filetypes = {'nerdtree'},
+  current_only = true,
+  base = 'buffer',
+  column = 80,
+  signs_on_startup = {'all'},
+  diagnostics_severities = {vim.diagnostic.severity.ERROR}
+})
