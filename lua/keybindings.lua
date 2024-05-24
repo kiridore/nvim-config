@@ -61,3 +61,13 @@ map('n', '<leader>fb', ":Telescope buffers<CR>", opt)
 map('n', '<leader>fh', ":Telescope help_tags<CR>", opt)
 
 
+-- rename
+map("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opt)
+-- code action
+map("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opt)
+-- go to definition
+map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
+-- show hover
+map("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opt)
+-- format
+map("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opt)

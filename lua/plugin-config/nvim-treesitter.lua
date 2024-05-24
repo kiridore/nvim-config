@@ -9,7 +9,7 @@ require 'nvim-treesitter.install'.compilers = { "zig" }
 treesitter.setup({
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言
-    ensure_installed = {"c", "cpp", "vim", "lua",},
+    ensure_installed = {"c", "cpp", "vim", "lua", "cmake"},
     -- 启用代码高亮模块
     highlight = {
         enable = true,
@@ -19,4 +19,5 @@ treesitter.setup({
         enable = true;
     },
 })
+
 

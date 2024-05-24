@@ -67,9 +67,21 @@ require("lazy").setup({
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     -- Git支持 :Git
     {"tpope/vim-fugitive"},
+    -- LSP
+    { 'neovim/nvim-lspconfig' },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
 })
 
 -- 启动插件
 require('bufferline').setup()
 require('lualine').setup()
 require('autoclose').setup()
+
+require('mason').setup()
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        "lua_ls",
+    }
+})
+
