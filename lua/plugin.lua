@@ -88,7 +88,10 @@ require("lazy").setup({
     {
         "ray-x/lsp_signature.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            hint_enable = false,
+            hint_prefix = "H"
+        },
         config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
     -- snip引擎
