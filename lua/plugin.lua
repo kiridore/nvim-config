@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- 色彩主题
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+    { "EdenEast/nightfox.nvim" },
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
@@ -71,12 +72,29 @@ require("lazy").setup({
     { 'neovim/nvim-lspconfig' },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
+    -- Git Line
+    {'lewis6991/gitsigns.nvim'},
+    -- 代码补全
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-cmdline'},
+    {'hrsh7th/nvim-cmp'},
+    -- 函数参数表高亮
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts) require'lsp_signature'.setup(opts) end
+    },
+
 })
 
 -- 启动插件
 require('bufferline').setup()
 require('lualine').setup()
 require('autoclose').setup()
+require('gitsigns').setup()
 
 require('mason').setup()
 require('mason-lspconfig').setup({

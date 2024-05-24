@@ -13,6 +13,7 @@ require('colorscheme')
 -- 插件配置
 require('plugin-config.nvim-tree')
 require('plugin-config.nvim-treesitter')
+require('plugin-config.cmp')
 
 require('lsp.lua')
 require('lsp.clangd')
