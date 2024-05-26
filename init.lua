@@ -17,3 +17,6 @@ require('plugin-config.cmp')
 
 require('lsp.lua')
 require('lsp.clangd')
+
+-- neovide config
+require('neovide-config')

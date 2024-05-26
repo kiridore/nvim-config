@@ -132,10 +132,11 @@ require('lsp_signature').setup({})
 require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()
 require('scrollview').setup({
-  excluded_filetypes = {'nerdtree'},
-  current_only = true,
-  base = 'buffer',
-  column = 80,
-  signs_on_startup = {'all'},
-  diagnostics_severities = {vim.diagnostic.severity.ERROR}
+    always_show = true,
+    excluded_filetypes = {'nerdtree'},
+    current_only = true,
+    base = 'buffer',
+    column = 80,
+    signs_on_startup = {'all'},
+    diagnostics_severities = {vim.diagnostic.severity.ERROR}
 })
