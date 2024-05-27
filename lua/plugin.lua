@@ -113,6 +113,8 @@ require("lazy").setup({
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     -- 滚动条
     {"dstein64/nvim-scrollview"},
+    -- 大文件编辑优化
+    {"LunarVim/bigfile.nvim"},
 })
 
 -- 启动插件
@@ -140,3 +142,17 @@ require('scrollview').setup({
     signs_on_startup = {'all'},
     diagnostics_severities = {vim.diagnostic.severity.ERROR}
 })
+require("bigfile").setup {
+  filesize = 2, -- size of the file in MiB, the plugin round file sizes to the closest MiB
+  pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
+  features = { -- features to disable
+    "indent_blankline",
+    "illuminate",
+    "lsp",
+    "treesitter",
+    "syntax",
+    "matchparen",
+    "vimopts",
+    "filetype",
+  },
+}
