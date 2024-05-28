@@ -71,3 +71,42 @@ map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
 map("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opt)
 -- format
 map("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opt)
+
+-- terminal
+map("t", "<ESC><ESC>", "<C-\\><C-n>", opt)
+map("n", "<C-\\>", "<Cmd>ToggleTerm direction=horizontal<CR>", opt)
+map("i", "<C-\\>", "<ESC><Cmd>ToggleTerm direction=horizontal<CR>", opt)
+
+local _toggle_lazygit = function()
+	if vim.fn.executable("lazygit") == 1 then
+		if not _lazygit then
+			_lazygit = require("toggleterm.terminal").Terminal:new({
+				cmd = "lazygit",
+				direction = "float",
+				close_on_exit = true,
+				hidden = true,
+			})
+		end
+		_lazygit:toggle()
+	else
+		vim.notify("Command [lazygit] not found!", vim.log.levels.ERROR, { title = "toggleterm.nvim" })
+	end
+end
+vim.keymap.set("n", "<leader>gg", _toggle_lazygit, opt)
+
+-- trouble
+map("n", "gt", ":TroubleToggle<CR>", opt)
+
+-- bufferline
+map("n", "<A-i>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<A-o>", ":BufferLineCyclePrev<CR>", opt)
+
+map("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", opt)
+map("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>", opt)
+map("n", "<A-3>", ":BufferLineGoToBuffer 3<CR>", opt)
+map("n", "<A-4>", ":BufferLineGoToBuffer 4<CR>", opt)
+map("n", "<A-5>", ":BufferLineGoToBuffer 5<CR>", opt)
+map("n", "<A-6>", ":BufferLineGoToBuffer 6<CR>", opt)
+map("n", "<A-7>", ":BufferLineGoToBuffer 7<CR>", opt)
+map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>", opt)
+map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", opt)
