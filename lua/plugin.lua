@@ -115,12 +115,20 @@ require("lazy").setup({
     {"dstein64/nvim-scrollview"},
     -- 大文件编辑优化
     {"LunarVim/bigfile.nvim"},
-    -- git diff 查看 无法运行
-    -- {"sindrets/diffview.nvim"},
+    -- git diff 查看 VDI无法运行
+    {"sindrets/diffview.nvim"},
     -- 更好的terminal
     {'akinsho/toggleterm.nvim', version = "*", config = true},
     -- 更清晰的F\f\T\t
     {"rhysd/clever-f.vim"},
+    -- trouble list
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            position = "right",
+        },
+    }
 })
 
 -- 启动插件
