@@ -76,7 +76,7 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
 -- 是否显示不可见字符
-vim.o.list = false
+vim.o.list = true
 
 -- 将空格显示为一个点
 vim.o.listchars = "space:·"
