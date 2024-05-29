@@ -16,6 +16,16 @@ require("lazy").setup({
     -- 色彩主题
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     { "EdenEast/nightfox.nvim" },
+    {
+        "neanias/everforest-nvim",
+        version = false,
+        lazy = false,
+        priority = 1000, -- make sure to load this before all the other start plugins
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            require("everforest").setup({ })
+        end,
+    },
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
@@ -37,6 +47,9 @@ require("lazy").setup({
     },
     -- 自动括号补全
     {'m4xshen/autoclose.nvim'},
+    -- surround 快捷添加括号引号
+    -- 把mini系列全部装上了
+    { 'echasnovski/mini.nvim', version = '*' },
     -- nvim-tree
     {
         "nvim-tree/nvim-tree.lua",
@@ -128,7 +141,13 @@ require("lazy").setup({
         opts = {
             position = "right",
         },
-    }
+    },
+    -- debug 套件
+    {'mfussenegger/nvim-dap'} ,
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+    },
 })
 
 -- 启动插件
@@ -170,3 +189,5 @@ require("bigfile").setup {
     "filetype",
   },
 }
+-- 启动mini的括号引号填充功能
+require("mini.surround").setup()
