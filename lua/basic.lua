@@ -17,8 +17,7 @@ vim.wo.cursorline = true
 vim.wo.signcolumn = "yes"
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
--- 插件scrollview代替了这个功能
--- vim.wo.colorcolumn = "80"
+vim.wo.colorcolumn = "80"
 
 -- 缩进4个空格等于一个Tab
 vim.o.tabstop = 4
