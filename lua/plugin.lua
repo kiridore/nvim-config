@@ -26,6 +26,7 @@ require("lazy").setup({
             require("everforest").setup({ })
         end,
     },
+    {'shaunsingh/nord.nvim'},
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
@@ -141,6 +142,7 @@ require("lazy").setup({
         opts = {
             position = "right",
         },
+        cmd = "Trouble",
     },
     -- debug 套件
     {'mfussenegger/nvim-dap'} ,
@@ -148,11 +150,18 @@ require("lazy").setup({
         "rcarriga/nvim-dap-ui",
         dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
     },
+    -- 删除当前buffer
+    {'ojroques/nvim-bufdel'},
+    -- 带加速的j k
+    { 'rainbowhxch/accelerated-jk.nvim' },
 })
 
 -- 启动插件
 require('bufferline').setup()
-require('lualine').setup()
+require('lualine').setup {
+    theme = "carbonfox"
+}
+
 require('autoclose').setup()
 require('gitsigns').setup()
 

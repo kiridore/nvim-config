@@ -48,6 +48,12 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
+-- 窗口比例控制
+map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Down>", ":resize +2<CR>", opt)
+map("n", "<C-Up>", ":resize -2<CR>", opt)
+
 
 ----------plugin---------
 
@@ -95,7 +101,9 @@ end
 vim.keymap.set("n", "<leader>gg", _toggle_lazygit, opt)
 
 -- trouble
-map("n", "gt", ":TroubleToggle<CR>", opt)
+map("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle <CR>", opt)
+map("n", "<leader>xl", "<Cmd>Trouble lsp toggle win.position=right<CR>", opt)
+map("n", "<leader>xs", "<Cmd>Trouble lsp_document_symbols toggle win.position=right<CR>", opt)
 
 -- bufferline
 map("n", "<A-i>", ":BufferLineCycleNext<CR>", opt)
@@ -110,3 +118,10 @@ map("n", "<A-6>", ":BufferLineGoToBuffer 6<CR>", opt)
 map("n", "<A-7>", ":BufferLineGoToBuffer 7<CR>", opt)
 map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>", opt)
 map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", opt)
+
+-- delete buffers
+map("n", "<A-q>", "<Cmd>BufDel<CR>", opt)
+
+-- 加速jk
+vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
+vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
