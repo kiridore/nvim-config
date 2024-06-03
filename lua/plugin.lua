@@ -103,8 +103,14 @@ require("lazy").setup({
         "ray-x/lsp_signature.nvim",
         event = "VeryLazy",
         opts = {
-            hint_enable = false,
-            hint_prefix = "H"
+            bind = true,
+            hint_enable = true,
+            hint_prefix = ":",
+            floating_window = true,
+            floating_window_above_cur_line = true,
+            transparency = nil,
+            warp = true,
+            zindex = 45,
         },
         config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
@@ -154,6 +160,22 @@ require("lazy").setup({
     {'ojroques/nvim-bufdel'},
     -- 带加速的j k
     { 'rainbowhxch/accelerated-jk.nvim' },
+    -- better lsp function
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        }
+    },
+    -- 显示LSP工作日志
+    {
+        "j-hui/fidget.nvim",
+        opts = { },
+    },
 })
 
 -- 启动插件
@@ -170,7 +192,6 @@ require('mason-lspconfig').setup({
     }
 })
 
-require('lsp_signature').setup({})
 require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()
 require('scrollview').setup({
