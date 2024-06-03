@@ -28,4 +28,7 @@ treesitter.setup({
     }
 })
 
-
+vim.api.nvim_set_option_value("foldmethod", "expr", {})
+vim.api.nvim_set_option_value("foldexpr", "nvim_treesitter#foldexpr()", {})
+-- 默认不折叠
+vim.opt.foldlevel = 99
