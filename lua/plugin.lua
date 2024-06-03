@@ -158,9 +158,7 @@ require("lazy").setup({
 
 -- 启动插件
 require('bufferline').setup()
-require('lualine').setup {
-    theme = "carbonfox"
-}
+require('lualine').setup ()
 
 require('autoclose').setup()
 require('gitsigns').setup()
