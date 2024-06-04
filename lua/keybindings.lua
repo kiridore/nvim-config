@@ -84,19 +84,19 @@ map("n", "<C-\\>", "<Cmd>ToggleTerm direction=horizontal<CR>", opt)
 map("i", "<C-\\>", "<ESC><Cmd>ToggleTerm direction=horizontal<CR>", opt)
 
 local _toggle_lazygit = function()
-	if vim.fn.executable("lazygit") == 1 then
-		if not _lazygit then
-			_lazygit = require("toggleterm.terminal").Terminal:new({
-				cmd = "lazygit",
-				direction = "float",
-				close_on_exit = true,
-				hidden = true,
-			})
-		end
-		_lazygit:toggle()
-	else
-		vim.notify("Command [lazygit] not found!", vim.log.levels.ERROR, { title = "toggleterm.nvim" })
-	end
+    if vim.fn.executable("lazygit") == 1 then
+        if not _lazygit then
+            _lazygit = require("toggleterm.terminal").Terminal:new({
+                cmd = "lazygit",
+                direction = "float",
+                close_on_exit = true,
+                hidden = true,
+            })
+        end
+        _lazygit:toggle()
+    else
+        vim.notify("Command [lazygit] not found!", vim.log.levels.ERROR, { title = "toggleterm.nvim" })
+    end
 end
 vim.keymap.set("n", "<leader>gg", _toggle_lazygit, opt)
 
@@ -125,3 +125,16 @@ map("n", "<A-q>", "<Cmd>BufDel<CR>", opt)
 -- 加速jk
 vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
 vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
+
+-- hop better motion
+map("n", "<leader>w", "<Cmd>HopWordMW<CR>", opt)
+map("n", "<leader>j", "<Cmd>HopLineMW<CR>", opt)
+map("n", "<leader>k", "<Cmd>HopLineMW<CR>", opt)
+map("n", "<leader>c", "<Cmd>HopChar1MW<CR>", opt)
+map("n", "<leader>C", "<Cmd>HopChar2MW<CR>", opt)
+
+map("v", "<leader>w", "<Cmd>HopWordMW<CR>", opt)
+map("v", "<leader>j", "<Cmd>HopLineMW<CR>", opt)
+map("v", "<leader>k", "<Cmd>HopLineMW<CR>", opt)
+map("v", "<leader>c", "<Cmd>HopChar1MW<CR>", opt)
+map("v", "<leader>C", "<Cmd>HopChar2MW<CR>", opt)

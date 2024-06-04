@@ -27,6 +27,7 @@ require("lazy").setup({
         end,
     },
     {'shaunsingh/nord.nvim'},
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
@@ -105,7 +106,7 @@ require("lazy").setup({
         opts = {
             bind = true,
             hint_enable = true,
-            hint_prefix = ":",
+            hint_prefix = "Hint:",
             floating_window = true,
             floating_window_above_cur_line = true,
             transparency = nil,
@@ -176,6 +177,18 @@ require("lazy").setup({
     {
         "j-hui/fidget.nvim",
         opts = { },
+    },
+    {
+        "smoka7/hop.nvim",
+        lazy = true,
+        version = "*",
+        event = { "CursorHold", "CursorHoldI" },
+        config = {},
+    },
+    -- nvim task 构建工具
+    {
+        "Shatur/neovim-tasks",
+        dependencies = { "vim-lua/plenary.nvim" }
     },
 })
 
