@@ -165,9 +165,6 @@ require("lazy").setup({
     -- better lsp function
     {
         'nvimdev/lspsaga.nvim',
-        config = function()
-            require('lspsaga').setup({})
-        end,
         dependencies = {
             'nvim-treesitter/nvim-treesitter', -- optional
             'nvim-tree/nvim-web-devicons',     -- optional
@@ -190,6 +187,8 @@ require("lazy").setup({
         "Shatur/neovim-tasks",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+    -- lsp悬浮窗
+    { "dnlhc/glance.nvim" }
 })
 
 -- 启动插件
