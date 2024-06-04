@@ -15,6 +15,7 @@ require('plugin-config.nvim-tree')
 require('plugin-config.nvim-treesitter')
 require('plugin-config.cmp')
 require('plugin-config.nvim-task')
+require('plugin-config.lspsaga')
 
 require('lsp.lua')
 require('lsp.clangd')
