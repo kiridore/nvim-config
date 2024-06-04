@@ -22,10 +22,6 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>y", "\"+y", opt)
 map("n", "<leader>p", "\"+p", opt)
 
--- 保存快捷键
-map("n", "<leader>w", ";w<CR>", opt)
-map("n", "<leader>wq", ";wqa!<CR>", opt)
-
 -- 搜索时填充very magic标识
 map("n", "/", "/\\v", opt)
 map("v", "/", "/\\v", opt)
@@ -42,18 +38,11 @@ map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 
--- <leader> + hjkl 窗口之间跳转
-map("n", "<leader>h", "<C-w>h", opt)
-map("n", "<leader>j", "<C-w>j", opt)
-map("n", "<leader>k", "<C-w>k", opt)
-map("n", "<leader>l", "<C-w>l", opt)
-
 -- 窗口比例控制
 map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
 map("n", "<C-Down>", ":resize +2<CR>", opt)
 map("n", "<C-Up>", ":resize -2<CR>", opt)
-
 
 ----------plugin---------
 
@@ -67,14 +56,16 @@ map('n', '<leader>fb', ":Telescope buffers<CR>", opt)
 map('n', '<leader>fh', ":Telescope help_tags<CR>", opt)
 
 
--- rename
-map("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opt)
--- code action
-map("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opt)
--- go to definition
-map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
--- show hover
-map("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opt)
+map("n", "<leader>r", "<Cmd>Lspsaga rename<CR>", opt)
+map("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", opt)
+map("n", "gd", "<Cmd>Glance definition<CR>", opt)
+map("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", opt)
+map("n", "gh", "<Cmd>Glance references<CR>", opt)
+map("n", "gm", "<Cmd>Glance implementations<CR>", opt)
+map("n", "gci", "<Cmd>Lspsaga incoming_cells<CR>", opt)
+map("n", "gco", "<Cmd>Lspsaga outgoing_cells<CR>", opt)
+map("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opt)
+
 -- format
 map("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opt)
 
@@ -123,8 +114,8 @@ map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", opt)
 map("n", "<A-q>", "<Cmd>BufDel<CR>", opt)
 
 -- 加速jk
-vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
-vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
+map('n', 'j', '<Plug>(accelerated_jk_gj)', opt)
+map('n', 'k', '<Plug>(accelerated_jk_gk)', opt)
 
 -- hop better motion
 map("n", "<leader>w", "<Cmd>HopWordMW<CR>", opt)
@@ -138,3 +129,17 @@ map("v", "<leader>j", "<Cmd>HopLineMW<CR>", opt)
 map("v", "<leader>k", "<Cmd>HopLineMW<CR>", opt)
 map("v", "<leader>c", "<Cmd>HopChar1MW<CR>", opt)
 map("v", "<leader>C", "<Cmd>HopChar2MW<CR>", opt)
+
+-- dap
+vim.keymap.set("n", "<F6>", function () require("dap").continue() end, opt)
+vim.keymap.set("n", "<F7>", function () require("dap").terminate() end, opt)
+vim.keymap.set("n", "<F8>", function () require("dap").toggle_breakpoint() end, opt)
+vim.keymap.set("n", "<F9>", function () require("dap").step_into() end, opt)
+vim.keymap.set("n", "<F10>", function () require("dap").step_out() end, opt)
+vim.keymap.set("n", "<F11>", function () require("dap").step_over() end, opt)
+
+
+vim.keymap.set("n", "<leader>db", function () require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, opt)
+vim.keymap.set("n", "<leader>dc", function () require("dap").run_to_cursor() end, opt)
+vim.keymap.set("n", "<leader>dl", function () require("dap").run_last() end, opt)
+vim.keymap.set("n", "<leader>do", function () require("dap").open() end, opt)   -- open repl
