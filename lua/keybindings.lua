@@ -58,7 +58,7 @@ map('n', '<leader>fh', ":Telescope help_tags<CR>", opt)
 
 map("n", "<leader>r", "<Cmd>Lspsaga rename<CR>", opt)
 map("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", opt)
-map("n", "gd", "<Cmd>Glance definition<CR>", opt)
+map("n", "gd", "<Cmd>Glance definitions<CR>", opt)
 map("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", opt)
 map("n", "gh", "<Cmd>Glance references<CR>", opt)
 map("n", "gm", "<Cmd>Glance implementations<CR>", opt)
