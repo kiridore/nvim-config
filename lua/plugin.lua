@@ -84,7 +84,7 @@ require("lazy").setup({
     -- 显示上下文
     {"nvim-treesitter/nvim-treesitter-context"},
     -- 彩色括号
-    {"p00f/nvim-ts-rainbow"},
+    {"hiphish/rainbow-delimiters.nvim"},
     -- Git支持 :Git
     {"tpope/vim-fugitive"},
     -- LSP
