@@ -41,5 +41,10 @@ require('lspsaga').setup({
             select = "x",
         },
     },
-
+    ui = {
+        border = "single", -- Can be single, double, rounded, solid, shadow.
+        devicon = true,
+        title = true,
+        code_action = '󰌵',
+    }
 })
