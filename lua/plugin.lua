@@ -188,7 +188,7 @@ require("lazy").setup({
     -- nvim task 构建工具
     {
         "Shatur/neovim-tasks",
-        dependencies = { "vim-lua/plenary.nvim" }
+        dependencies = { "nvim-lua/plenary.nvim" }
     },
 })
 
