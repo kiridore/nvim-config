@@ -137,3 +137,8 @@ vim.keymap.set("n", "<leader>db", function () require("dap").set_breakpoint(vim.
 vim.keymap.set("n", "<leader>dc", function () require("dap").run_to_cursor() end, opt)
 vim.keymap.set("n", "<leader>dl", function () require("dap").run_last() end, opt)
 vim.keymap.set("n", "<leader>do", function () require("dap").open() end, opt)   -- open repl
+
+-- clever-f
+
+map("n", ";", "<Plug>(clever-f-repeat-forward)", opt)
+map("n", ",", "<Plug>(clever-f-repeat-back)", opt)
