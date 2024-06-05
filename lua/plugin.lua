@@ -91,6 +91,7 @@ require("lazy").setup({
     { 'neovim/nvim-lspconfig' },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
+    {"jay-babu/mason-nvim-dap.nvim"},
     -- Git Line
     {'lewis6991/gitsigns.nvim'},
     -- 代码补全
@@ -199,11 +200,8 @@ require('autoclose').setup()
 require('gitsigns').setup()
 
 require('mason').setup()
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        "lua_ls",
-    }
-})
+require('mason-lspconfig').setup()
+require('mason-nvim-dap').setup()
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()
