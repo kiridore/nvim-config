@@ -207,7 +207,11 @@ require('autoclose').setup()
 require('gitsigns').setup()
 
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'lua_ls', 'cmake'
+    }
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()

@@ -20,6 +20,7 @@ require('plugin-config.glance')
 
 require('lsp.lua')
 require('lsp.clangd')
+require('lsp.cmake')
 
 -- neovide config
 require('neovide-config')
