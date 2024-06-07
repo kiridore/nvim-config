@@ -192,7 +192,15 @@ require("lazy").setup({
 })
 
 -- 启动插件
-require('bufferline').setup()
+require('bufferline').setup({
+    options = {
+        numbers = "ordinal",
+        indicator = {
+            style = "icon"
+        },
+        diagnostic = "nvim_lsp"
+    }
+})
 require('lualine').setup ()
 
 require('autoclose').setup()
