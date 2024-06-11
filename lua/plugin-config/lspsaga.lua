@@ -46,5 +46,6 @@ require('lspsaga').setup({
         devicon = true,
         title = true,
         code_action = '󰌵',
-    }
+    },
+    request_timeout = 3000,
 })
