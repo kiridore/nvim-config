@@ -21,6 +21,7 @@ require('plugin-config.glance')
 require('lsp.lua')
 require('lsp.clangd')
 require('lsp.cmake')
+require('lsp.glsl_analyzer')
 
 -- neovide config
 require('neovide-config')

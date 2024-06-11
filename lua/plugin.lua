@@ -211,7 +211,7 @@ require('gitsigns').setup()
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'lua_ls', 'cmake'
+        'lua_ls', 'cmake', 'glsl_analyzer'
     }
 })
 
