@@ -1,9 +1,6 @@
 -- 基础配置
 require("basic")
 
--- 快捷键绑定
-require("keybindings")
-
 -- 插件管理
 require("plugin")
 
@@ -27,3 +24,7 @@ require('lsp.glsl_analyzer')
 require('neovide-config')
 
 require('dap_config')
+
+-- 快捷键绑定
+require("keybindings")
+
