@@ -99,6 +99,8 @@ require("lazy").setup({
     {'hrsh7th/cmp-path'},
     {'hrsh7th/cmp-cmdline'},
     {'hrsh7th/nvim-cmp'},
+    {'ray-x/cmp-treesitter'},
+    {'saadparwaiz1/cmp_luasnip'},
     -- 函数参数表高亮
     {
         "ray-x/lsp_signature.nvim",
@@ -213,7 +215,13 @@ require('mason-lspconfig').setup({
     }
 })
 
+require("luasnip").setup({
+    history = true,
+    update_events = "TextChanged,TextChangedI",
+    delete_check_events = "TextChanged,InsertLeave",
+})
 require("luasnip.loaders.from_vscode").lazy_load()
+
 require("ibl").setup()
 require('scrollview').setup({
     always_show = false,
