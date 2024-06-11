@@ -25,3 +25,5 @@ require('lsp.glsl_analyzer')
 
 -- neovide config
 require('neovide-config')
+
+require('dap_config')
