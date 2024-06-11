@@ -11,7 +11,8 @@ treesitter.setup({
     -- :TSInstallInfo 命令查看支持的语言
     ensure_installed = {
         "c", "cpp", "vim", "lua", "cmake",
-        "verilog", "python", "xml", "markdown", "hlsl", "glsl"
+        "verilog", "python", "xml",
+        "markdown_inline", "markdown", "hlsl", "glsl"
     },
     -- 启用代码高亮模块
     highlight = {
