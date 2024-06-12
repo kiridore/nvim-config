@@ -57,7 +57,6 @@ map("n", "gh", "<Cmd>Glance references<CR>", opt)
 map("n", "gm", "<Cmd>Glance implementations<CR>", opt)
 map("n", "gci", "<Cmd>Lspsaga incoming_calls<CR>", opt)
 map("n", "gco", "<Cmd>Lspsaga outgoing_calls<CR>", opt)
-map("n", "go", "<Cmd>AerialToggle!<CR>", opt)
 map("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opt)
 
 -- format
