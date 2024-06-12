@@ -203,6 +203,8 @@ require("lazy").setup({
             -- Your setup opts here
         },
     },
+    -- 高亮光标下面的符号, A-n A-p上下切换
+    {"RRethy/vim-illuminate"},
 })
 
 -- 启动插件
@@ -237,7 +239,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()
 require('scrollview').setup({
     always_show = false,
-    excluded_filetypes = {'nerdtree'},
+    excluded_filetypes = {'NvimTree'},
     current_only = true,
     base = 'right',
     -- column = 80,

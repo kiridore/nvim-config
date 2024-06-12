@@ -14,6 +14,7 @@ require('plugin-config.cmp')
 require('plugin-config.nvim-task')
 require('plugin-config.lspsaga')
 require('plugin-config.glance')
+require('plugin-config.illuminate')
 
 require('lsp.lua')
 require('lsp.clangd')
