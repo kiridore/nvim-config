@@ -31,6 +31,8 @@ require("lazy").setup({
     { 'mellow-theme/mellow.nvim' , priority = 1000 , lazy = false },       -- 素色黑白
     {'slugbyte/lackluster.nvim', priority = 1000 , lazy = false },       -- 纯黑白
     {'aktersnurra/no-clown-fiesta.nvim', priority = 1000 , lazy = false },-- 偏素的冷色
+    {'NLKNguyen/papercolor-theme', priority = 1000 , lazy = false },-- 柔和彩色
+    {'hardselius/warlock', priority = 1000 , lazy = false },-- 真·纯黑白
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
