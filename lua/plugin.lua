@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- 色彩主题
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
-    { "EdenEast/nightfox.nvim" },
+    { "EdenEast/nightfox.nvim", priority = 1000 , lazy = false },
     {
         "neanias/everforest-nvim",
         version = false,
@@ -26,8 +26,11 @@ require("lazy").setup({
             require("everforest").setup({ })
         end,
     },
-    {'shaunsingh/nord.nvim'},
+    {'shaunsingh/nord.nvim', priority = 1000 , lazy = false },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'mellow-theme/mellow.nvim' , priority = 1000 , lazy = false },       -- 素色黑白
+    {'slugbyte/lackluster.nvim', priority = 1000 , lazy = false },       -- 纯黑白
+    {'aktersnurra/no-clown-fiesta.nvim', priority = 1000 , lazy = false },-- 偏素的冷色
     -- 更好的开始界面
     {
         'goolord/alpha-nvim',
