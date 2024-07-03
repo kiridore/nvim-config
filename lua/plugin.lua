@@ -238,7 +238,7 @@ require('gitsigns').setup()
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'lua_ls', 'cmake', 'glsl_analyzer'
+        'lua_ls', 'cmake', 'glsl_analyzer', 'tsserver'
     }
 })
 
@@ -275,4 +275,3 @@ require("bigfile").setup {
 }
 -- 启动mini的括号引号填充功能
 require("mini.surround").setup()
-
