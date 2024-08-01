@@ -147,7 +147,13 @@ require("lazy").setup({
     -- git diff 查看 VDI无法运行
     {"sindrets/diffview.nvim"},
     -- 更好的terminal
-    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        opt = {
+            shell = "powershell.exe"
+        }
+    },
     -- 更清晰的F\f\T\t
     {"rhysd/clever-f.vim"},
     -- trouble list
@@ -188,11 +194,6 @@ require("lazy").setup({
         version = "*",
         event = { "CursorHold", "CursorHoldI" },
         config = {},
-    },
-    -- nvim task 构建工具
-    {
-        "Shatur/neovim-tasks",
-        dependencies = { "nvim-lua/plenary.nvim" }
     },
     -- lsp悬浮窗
     { "dnlhc/glance.nvim" },
