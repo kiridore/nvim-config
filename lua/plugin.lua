@@ -150,9 +150,7 @@ require("lazy").setup({
     {
         'akinsho/toggleterm.nvim',
         version = "*",
-        opt = {
-            shell = "powershell.exe"
-        }
+        config = true
     },
     -- 更清晰的F\f\T\t
     {"rhysd/clever-f.vim"},
@@ -276,3 +274,8 @@ require("bigfile").setup {
 }
 -- 启动mini的括号引号填充功能
 require("mini.surround").setup()
+
+-- 设置默认termianl
+require("toggleterm").setup({
+    shell = "powershell.exe"
+})
