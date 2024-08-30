@@ -90,8 +90,8 @@ map("n", "<leader>xl", "<Cmd>Trouble lsp toggle win.position=right<CR>", opt)
 map("n", "<leader>xs", "<Cmd>Trouble lsp_document_symbols toggle win.position=right<CR>", opt)
 
 -- bufferline
-map("n", "<A-i>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<A-o>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<A-o>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<A-i>", ":BufferLineCyclePrev<CR>", opt)
 
 map("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", opt)
 map("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>", opt)
