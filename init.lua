@@ -21,6 +21,7 @@ require('lsp.clangd')
 require('lsp.cmake')
 require('lsp.glsl_analyzer')
 require('lsp.tsserver')
+require('lsp.rust')
 
 -- neovide config
 require('neovide-config')
