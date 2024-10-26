@@ -147,7 +147,11 @@ require("lazy").setup({
     -- git diff 查看 VDI无法运行
     {"sindrets/diffview.nvim"},
     -- 更好的terminal
-    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
     -- 更清晰的F\f\T\t
     {"rhysd/clever-f.vim"},
     -- trouble list
@@ -188,11 +192,6 @@ require("lazy").setup({
         version = "*",
         event = { "CursorHold", "CursorHoldI" },
         config = {},
-    },
-    -- nvim task 构建工具
-    {
-        "Shatur/neovim-tasks",
-        dependencies = { "nvim-lua/plenary.nvim" }
     },
     -- lsp悬浮窗
     { "dnlhc/glance.nvim" },
@@ -275,3 +274,8 @@ require("bigfile").setup {
 }
 -- 启动mini的括号引号填充功能
 require("mini.surround").setup()
+
+-- 设置默认termianl
+require("toggleterm").setup({
+    shell = "powershell.exe"
+})
