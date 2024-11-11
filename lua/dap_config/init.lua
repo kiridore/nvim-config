@@ -9,4 +9,5 @@ require("adapters.gdb")
 
 --config
 require("configs.cpp")
+require("configs.rust")
 
