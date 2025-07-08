@@ -244,9 +244,10 @@ require('gitsigns').setup()
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'lua_ls', 'cmake', 'glsl_analyzer'
+        'lua_ls', 'neocmake', 'glsl_analyzer', 'basedpyright', 'clangd', 'rust_analyzer'
     }
 })
+
 
 require("luasnip").setup({
     history = true,

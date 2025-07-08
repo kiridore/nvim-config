@@ -12,11 +12,7 @@ require('plugin-config.lspsaga')
 require('plugin-config.glance')
 require('plugin-config.illuminate')
 
-require('lsp.lua')
-require('lsp.clangd')
-require('lsp.cmake')
-require('lsp.glsl_analyzer')
-require('lsp.rust')
+require('lsp_config')
 
 -- neovide config
 require('neovide-config')
