@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- 色彩主题
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, lazy = false, opts = ...},
-    { "EdenEast/nightfox.nvim", priority = 1000 , lazy = false },
+    { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, lazy = false, opts = ... },
+    { "EdenEast/nightfox.nvim",   priority = 1000,  lazy = false },
     {
         "neanias/everforest-nvim",
         version = false,
@@ -23,17 +23,21 @@ require("lazy").setup({
         priority = 1000, -- make sure to load this before all the other start plugins
         -- Optional; default configuration will be used if setup isn't called.
         config = function()
-            require("everforest").setup({ })
+            require("everforest").setup({})
         end,
     },
-    {'shaunsingh/nord.nvim', priority = 1000 , lazy = false },
-    { 'mellow-theme/mellow.nvim' , priority = 1000 , lazy = false },       -- 素色黑白
-    {'slugbyte/lackluster.nvim', priority = 1000 , lazy = false },       -- 纯黑白
-    {'aktersnurra/no-clown-fiesta.nvim', priority = 1000 , lazy = false },-- 偏素的冷色
-    {'NLKNguyen/papercolor-theme', priority = 1000 , lazy = false },-- 柔和彩色
-    {'hardselius/warlock', priority = 1000 , lazy = false },-- 真·纯黑白
-    { "rose-pine/neovim", name = "rose-pine" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = false,
+    { 'shaunsingh/nord.nvim',             priority = 1000,   lazy = false },
+    { 'mellow-theme/mellow.nvim',         priority = 1000,   lazy = false }, -- 素色黑白
+    { 'slugbyte/lackluster.nvim',         priority = 1000,   lazy = false }, -- 纯黑白
+    { 'aktersnurra/no-clown-fiesta.nvim', priority = 1000,   lazy = false }, -- 偏素的冷色
+    { 'NLKNguyen/papercolor-theme',       priority = 1000,   lazy = false }, -- 柔和彩色
+    { 'hardselius/warlock',               priority = 1000,   lazy = false }, -- 真·纯黑白
+    { "rose-pine/neovim",                 name = "rose-pine" },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        lazy = false,
         config =
             function()
                 require("catppuccin").setup()
@@ -45,8 +49,8 @@ require("lazy").setup({
     {
         'goolord/alpha-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.startify'.config)
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.startify'.config)
         end
     },
     -- 更好的buffer line
@@ -61,7 +65,7 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     -- 自动括号补全
-    {'m4xshen/autoclose.nvim'},
+    { 'm4xshen/autoclose.nvim' },
     -- surround 快捷添加括号引号
     -- 把mini系列全部装上了
     { 'echasnovski/mini.nvim', version = '*' },
@@ -79,7 +83,8 @@ require("lazy").setup({
     },
     -- 模糊文件搜索
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     -- 快捷键绑定查询
@@ -90,30 +95,30 @@ require("lazy").setup({
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = { }
+        opts = {}
     },
     -- 代码高亮
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    { "nvim-treesitter/nvim-treesitter",        build = ":TSUpdate" },
     -- 显示上下文
-    {"nvim-treesitter/nvim-treesitter-context"},
+    { "nvim-treesitter/nvim-treesitter-context" },
     -- 彩色括号
-    {"hiphish/rainbow-delimiters.nvim"},
+    { "hiphish/rainbow-delimiters.nvim" },
     -- Git支持 :Git
-    {"tpope/vim-fugitive"},
+    { "tpope/vim-fugitive" },
     -- LSP
     { 'neovim/nvim-lspconfig' },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     -- Git Line
-    {'lewis6991/gitsigns.nvim'},
+    { 'lewis6991/gitsigns.nvim' },
     -- 代码补全
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/cmp-buffer'},
-    {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-cmdline'},
-    {'hrsh7th/nvim-cmp'},
-    {'ray-x/cmp-treesitter'},
-    {'saadparwaiz1/cmp_luasnip'},
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-cmdline' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'ray-x/cmp-treesitter' },
+    { 'saadparwaiz1/cmp_luasnip' },
     -- 函数参数表高亮
     {
         "ray-x/lsp_signature.nvim",
@@ -129,7 +134,7 @@ require("lazy").setup({
             zindex = 45,
             handler_opts = { border = "single" },
         },
-        config = function(_, opts) require'lsp_signature'.setup(opts) end
+        config = function(_, opts) require 'lsp_signature'.setup(opts) end
     },
     -- snip引擎
     {
@@ -143,17 +148,17 @@ require("lazy").setup({
     -- 更好的注释
     {
         'numToStr/Comment.nvim',
-        opts = { },
+        opts = {},
         lazy = false,
     },
     -- blankline
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     -- 滚动条
-    {"dstein64/nvim-scrollview"},
+    { "dstein64/nvim-scrollview" },
     -- 大文件编辑优化
-    {"LunarVim/bigfile.nvim"},
+    { "LunarVim/bigfile.nvim" },
     -- git diff 查看 VDI无法运行
-    {"sindrets/diffview.nvim"},
+    { "sindrets/diffview.nvim" },
     -- 更好的terminal
     {
         'akinsho/toggleterm.nvim',
@@ -161,7 +166,7 @@ require("lazy").setup({
         config = true
     },
     -- 更清晰的F\f\T\t
-    {"rhysd/clever-f.vim"},
+    { "rhysd/clever-f.vim" },
     -- trouble list
     {
         "folke/trouble.nvim",
@@ -172,14 +177,14 @@ require("lazy").setup({
         cmd = "Trouble",
     },
     -- debug 套件
-    {'mfussenegger/nvim-dap'} ,
+    { 'mfussenegger/nvim-dap' },
     {
         "rcarriga/nvim-dap-ui",
-        dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     },
     { "jay-babu/mason-nvim-dap.nvim" },
     -- 删除当前buffer
-    {'ojroques/nvim-bufdel'},
+    { 'ojroques/nvim-bufdel' },
     -- 带加速的j k
     { 'rainbowhxch/accelerated-jk.nvim' },
     -- better lsp function
@@ -193,7 +198,7 @@ require("lazy").setup({
     -- 显示LSP工作日志
     {
         "j-hui/fidget.nvim",
-        opts = { },
+        opts = {},
     },
     {
         "smoka7/hop.nvim",
@@ -217,7 +222,7 @@ require("lazy").setup({
         },
     },
     -- 高亮光标下面的符号, A-n A-p上下切换
-    {"RRethy/vim-illuminate"},
+    { "RRethy/vim-illuminate" },
 })
 
 -- 启动插件
@@ -238,7 +243,7 @@ require('bufferline').setup({
         },
     }
 })
-require('lualine').setup ()
+require('lualine').setup()
 
 require('autoclose').setup()
 require('gitsigns').setup()
@@ -251,9 +256,9 @@ require('mason-lspconfig').setup({
         'glsl_analyzer',
         'clangd',
         'rust_analyzer',
-        'basedpyright',                 -- python lsp
+        'basedpyright',            -- python lsp
     },
-    automatic_installation = true,              -- 自动安装
+    automatic_installation = true, -- 自动安装
 })
 
 require("luasnip").setup({
@@ -266,26 +271,26 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require("ibl").setup()
 require('scrollview').setup({
     always_show = false,
-    excluded_filetypes = {'NvimTree'},
+    excluded_filetypes = { 'NvimTree' },
     current_only = true,
     base = 'right',
     -- column = 80,
-    signs_on_startup = {'all'},
-    diagnostics_severities = {vim.diagnostic.severity.ERROR}
+    signs_on_startup = { 'all' },
+    diagnostics_severities = { vim.diagnostic.severity.ERROR }
 })
 require("bigfile").setup {
-  filesize = 2, -- size of the file in MiB, the plugin round file sizes to the closest MiB
-  pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
-  features = { -- features to disable
-    "indent_blankline",
-    "illuminate",
-    "lsp",
-    "treesitter",
-    "syntax",
-    "matchparen",
-    "vimopts",
-    "filetype",
-  },
+    filesize = 2,    -- size of the file in MiB, the plugin round file sizes to the closest MiB
+    pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
+    features = {     -- features to disable
+        "indent_blankline",
+        "illuminate",
+        "lsp",
+        "treesitter",
+        "syntax",
+        "matchparen",
+        "vimopts",
+        "filetype",
+    },
 }
 -- 启动mini的括号引号填充功能
 require("mini.surround").setup()
