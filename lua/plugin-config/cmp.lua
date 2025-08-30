@@ -53,9 +53,10 @@ cmp.setup({
         { name = 'path' },
     }),
     experimental = {
-        ghost_text = {
-            hl_group = "Whitespace",
-        }
+        -- ghost_text = {
+        --     hl_group = "Whitespace",
+        -- }
+        ghost_text = false,
     },
     performance = {
         async_budget = 1,

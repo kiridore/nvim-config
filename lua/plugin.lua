@@ -237,6 +237,8 @@ require("lazy").setup({
     },
     -- 高亮光标下面的符号, A-n A-p上下切换
     { "RRethy/vim-illuminate" },
+    -- 自动高亮颜色值
+    { "norcalli/nvim-colorizer.lua" },
 })
 
 -- 启动插件
@@ -314,3 +316,5 @@ require("bigfile").setup {
 require("toggleterm").setup({
     shell = "powershell.exe"
 })
+
+require("colorizer").setup()
