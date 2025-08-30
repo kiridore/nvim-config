@@ -268,19 +268,6 @@ require('nvim-autopairs').setup({
 
 require('gitsigns').setup()
 
-require('mason').setup()
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        'lua_ls',
-        'neocmake',
-        'glsl_analyzer',
-        'clangd',
-        'rust_analyzer',
-        'basedpyright',            -- python lsp
-    },
-    automatic_installation = true, -- 自动安装
-})
-
 require("luasnip").setup({
     history = true,
     update_events = "TextChanged,TextChangedI",
