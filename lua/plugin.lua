@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- 色彩主题
-    { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, lazy = false, opts = ... },
-    { "EdenEast/nightfox.nvim",   priority = 1000,  lazy = false },
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, lazy = false, opts = ... },
+    { "EdenEast/nightfox.nvim",   priority = 1000, lazy = false },
     {
         "neanias/everforest-nvim",
         version = false,
@@ -65,10 +65,24 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     -- 自动括号补全
-    { 'm4xshen/autoclose.nvim' },
-    -- surround 快捷添加括号引号
-    -- 把mini系列全部装上了
-    { 'echasnovski/mini.nvim', version = '*' },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
+    },
+    -- 更现代的surround
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
     -- nvim-tree
     {
         "nvim-tree/nvim-tree.lua",
@@ -245,7 +259,10 @@ require('bufferline').setup({
 })
 require('lualine').setup()
 
-require('autoclose').setup()
+require('nvim-autopairs').setup({
+    disable_filetype = { "TelescopePrompt", "vim" },
+})
+
 require('gitsigns').setup()
 
 require('mason').setup()
@@ -279,9 +296,9 @@ require('scrollview').setup({
     diagnostics_severities = { vim.diagnostic.severity.ERROR }
 })
 require("bigfile").setup {
-    filesize = 2,    -- size of the file in MiB, the plugin round file sizes to the closest MiB
+    filesize = 2,      -- size of the file in MiB, the plugin round file sizes to the closest MiB
     pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
-    features = {     -- features to disable
+    features = {       -- features to disable
         "indent_blankline",
         "illuminate",
         "lsp",
@@ -292,8 +309,6 @@ require("bigfile").setup {
         "filetype",
     },
 }
--- 启动mini的括号引号填充功能
-require("mini.surround").setup()
 
 -- 设置默认termianl
 require("toggleterm").setup({
