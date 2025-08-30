@@ -32,12 +32,13 @@ require("lazy").setup({
     {'aktersnurra/no-clown-fiesta.nvim', priority = 1000 , lazy = false },-- 偏素的冷色
     {'NLKNguyen/papercolor-theme', priority = 1000 , lazy = false },-- 柔和彩色
     {'hardselius/warlock', priority = 1000 , lazy = false },-- 真·纯黑白
+    { "rose-pine/neovim", name = "rose-pine" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = false,
         config =
             function()
                 require("catppuccin").setup()
                 ---- 暂时把颜色修改写在这里，保证bufferlline插件加载时一定能获取到
-                vim.cmd([[colorscheme everforest]])
+                vim.cmd([[colorscheme catppuccin]])
             end
     },
     -- 更好的开始界面
@@ -176,6 +177,7 @@ require("lazy").setup({
         "rcarriga/nvim-dap-ui",
         dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
     },
+    { "jay-babu/mason-nvim-dap.nvim" },
     -- 删除当前buffer
     {'ojroques/nvim-bufdel'},
     -- 带加速的j k
@@ -244,10 +246,15 @@ require('gitsigns').setup()
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'lua_ls', 'neocmake', 'glsl_analyzer', 'basedpyright', 'clangd', 'rust_analyzer'
-    }
+        'lua_ls',
+        'neocmake',
+        'glsl_analyzer',
+        'clangd',
+        'rust_analyzer',
+        'basedpyright',                 -- python lsp
+    },
+    automatic_installation = true,              -- 自动安装
 })
-
 
 require("luasnip").setup({
     history = true,
