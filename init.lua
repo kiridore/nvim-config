@@ -11,6 +11,7 @@ require('plugin-config.cmp')
 require('plugin-config.lspsaga')
 require('plugin-config.glance')
 require('plugin-config.illuminate')
+require('plugin-config.copilot')
 
 require('lsp_config')
 

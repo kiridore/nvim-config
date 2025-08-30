@@ -239,6 +239,7 @@ require("lazy").setup({
     { "RRethy/vim-illuminate" },
     -- 自动高亮颜色值
     { "norcalli/nvim-colorizer.lua" },
+    { "zbirenbaum/copilot.lua" },
 })
 
 -- 启动插件
