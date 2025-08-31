@@ -99,3 +99,15 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.o.background = "dark"
+
+-- 显示诊断信息
+vim.diagnostic.config({
+    virtual_text = false,
+    virtual_line = false,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function ()
+        vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})
+    end
+})
