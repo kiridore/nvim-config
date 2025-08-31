@@ -239,7 +239,23 @@ require("lazy").setup({
     { "RRethy/vim-illuminate" },
     -- 自动高亮颜色值
     { "norcalli/nvim-colorizer.lua" },
+    -- AI
     { "zbirenbaum/copilot.lua" },
+    -- 更好的书签管理工具
+    {
+        "chentoast/marks.nvim",
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
+        config = function()
+            require('tiny-inline-diagnostic').setup()
+            vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
+        end
+    },
 })
 
 -- 启动插件
@@ -306,3 +322,9 @@ require("toggleterm").setup({
 })
 
 require("colorizer").setup()
+
+require("tiny-inline-diagnostic").setup({
+    -- Style preset for diagnostic messages
+    -- Available options: "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
+    preset = "powerline",
+})

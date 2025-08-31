@@ -144,3 +144,5 @@ map("n", ",", "<Plug>(clever-f-repeat-back)", opt)
 
 -- dap-ui
 map("n", "<A-k>", "<Cmd>lua require(\"dapui\").eval()<CR>", opt)
+
+vim.keymap.set("n", "<leader>gm", require("telescope.builtin").marks, opt)
