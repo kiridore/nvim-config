@@ -9,6 +9,10 @@
 + 编译Treesitter的所有解析器，在Win下必须 [Home](https://ziglang.org/)
 ### lazygit
 + 终端图形化Git工具 [Github](https://github.com/jesseduffield/lazygit)
+### 文件批处理工具 sad
++ 用于全局替换 [github](https://github.com/ms-jpq/sad)
+### 全局模糊搜索工具 fzf
++ 模糊搜索 [github](https://github.com/junegunn/fzf)
 ### MinGW32
 + 编译器、clangd均包含在其中
 + 使用msys2直接安装MinGW工具链
