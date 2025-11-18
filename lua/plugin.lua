@@ -12,6 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("lazy").setup({
     -- 色彩主题
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, lazy = false, opts = ... },
@@ -53,12 +54,12 @@ require("lazy").setup({
             require 'alpha'.setup(require 'alpha.themes.startify'.config)
         end
     },
-    -- 更好的buffer line
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons'
-    },
+    -- -- 更好的buffer line
+    -- {
+    --     'akinsho/bufferline.nvim',
+    --     version = "*",
+    --     dependencies = 'nvim-tree/nvim-web-devicons'
+    -- },
     -- lualine
     {
         'nvim-lualine/lualine.nvim',
@@ -258,24 +259,24 @@ require("lazy").setup({
     },
 })
 
--- 启动插件
-require('bufferline').setup({
-    options = {
-        numbers = "ordinal",
-        indicator = {
-            style = "icon"
-        },
-        diagnostic = "nvim_lsp",
-        offsets = {
-            {
-                filetype = "NvimTree",
-                text = "File Explorer",
-                text_align = "center",
-                separator = true
-            }
-        },
-    }
-})
+-- -- 启动插件
+-- require('bufferline').setup({
+--     options = {
+--         numbers = "ordinal",
+--         indicator = {
+--             style = "icon"
+--         },
+--         diagnostic = "nvim_lsp",
+--         offsets = {
+--             {
+--                 filetype = "NvimTree",
+--                 text = "File Explorer",
+--                 text_align = "center",
+--                 separator = true
+--             }
+--         },
+--     }
+-- })
 require('lualine').setup()
 
 require('nvim-autopairs').setup({

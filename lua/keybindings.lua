@@ -27,10 +27,10 @@ map("n", "/", "/\\v", opt)
 map("v", "/", "/\\v", opt)
 
 -- alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+map("n", "<C-h>", "<C-w>h", opt)
+map("n", "<C-j>", "<C-w>j", opt)
+map("n", "<C-k>", "<C-w>k", opt)
+map("n", "<C-l>", "<C-w>l", opt)
 
 -- 窗口比例控制
 map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
@@ -90,18 +90,18 @@ map("n", "<leader>xl", "<Cmd>Trouble lsp toggle win.position=right<CR>", opt)
 map("n", "<leader>xs", "<Cmd>Trouble lsp_document_symbols toggle win.position=right<CR>", opt)
 
 -- bufferline
-map("n", "<A-o>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<A-i>", ":BufferLineCyclePrev<CR>", opt)
-
-map("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", opt)
-map("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>", opt)
-map("n", "<A-3>", ":BufferLineGoToBuffer 3<CR>", opt)
-map("n", "<A-4>", ":BufferLineGoToBuffer 4<CR>", opt)
-map("n", "<A-5>", ":BufferLineGoToBuffer 5<CR>", opt)
-map("n", "<A-6>", ":BufferLineGoToBuffer 6<CR>", opt)
-map("n", "<A-7>", ":BufferLineGoToBuffer 7<CR>", opt)
-map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>", opt)
-map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", opt)
+-- map("n", "<A-o>", ":BufferLineCycleNext<CR>", opt)
+-- map("n", "<A-i>", ":BufferLineCyclePrev<CR>", opt)
+--
+-- map("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", opt)
+-- map("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>", opt)
+-- map("n", "<A-3>", ":BufferLineGoToBuffer 3<CR>", opt)
+-- map("n", "<A-4>", ":BufferLineGoToBuffer 4<CR>", opt)
+-- map("n", "<A-5>", ":BufferLineGoToBuffer 5<CR>", opt)
+-- map("n", "<A-6>", ":BufferLineGoToBuffer 6<CR>", opt)
+-- map("n", "<A-7>", ":BufferLineGoToBuffer 7<CR>", opt)
+-- map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>", opt)
+-- map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", opt)
 
 -- delete buffers
 map("n", "<A-q>", "<Cmd>BufDel<CR>", opt)
@@ -143,6 +143,6 @@ map("n", ";", "<Plug>(clever-f-repeat-forward)", opt)
 map("n", ",", "<Plug>(clever-f-repeat-back)", opt)
 
 -- dap-ui
-map("n", "<A-k>", "<Cmd>lua require(\"dapui\").eval()<CR>", opt)
+-- map("n", "<A-k>", "<Cmd>lua require(\"dapui\").eval()<CR>", opt)
 
 vim.keymap.set("n", "<leader>gm", require("telescope.builtin").marks, opt)
