@@ -4,7 +4,12 @@ if not status then
     return
 end
 -- windows下只有zig成功工作过
-require 'nvim-treesitter.install'.compilers = { "zig" }
+-- 如果是linux就正常使用gcc
+if vim.loop.os_uname().sysname == "Linux" then
+    require 'nvim-treesitter.install'.compilers = { "gcc" }
+else 
+    require 'nvim-treesitter.install'.compilers = { "zig" }
+end
 
 treesitter.setup({
     -- 安装 language parser
