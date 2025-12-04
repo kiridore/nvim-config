@@ -67,22 +67,8 @@ map("t", "<ESC><ESC>", "<C-\\><C-n>", opt)
 map("n", "<C-\\>", "<Cmd>ToggleTerm direction=horizontal<CR>", opt)
 map("i", "<C-\\>", "<ESC><Cmd>ToggleTerm direction=horizontal<CR>", opt)
 
-local _toggle_lazygit = function()
-    if vim.fn.executable("lazygit") == 1 then
-        if not _lazygit then
-            _lazygit = require("toggleterm.terminal").Terminal:new({
-                cmd = "lazygit",
-                direction = "float",
-                close_on_exit = true,
-                hidden = true,
-            })
-        end
-        _lazygit:toggle()
-    else
-        vim.notify("Command [lazygit] not found!", vim.log.levels.ERROR, { title = "toggleterm.nvim" })
-    end
-end
-vim.keymap.set("n", "<leader>gg", _toggle_lazygit, opt)
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opt)
+vim.keymap.set("n", "<leader>gf", ":LazyGitFilterCurrentFile<CR>", opt)
 
 -- trouble
 map("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle <CR>", opt)
@@ -146,3 +132,12 @@ map("n", ",", "<Plug>(clever-f-repeat-back)", opt)
 -- map("n", "<A-k>", "<Cmd>lua require(\"dapui\").eval()<CR>", opt)
 
 vim.keymap.set("n", "<leader>gm", require("telescope.builtin").marks, opt)
+
+-- headhunter
+
+vim.keymap.set("n", "<leader>gh", ":HeadhunterTakeHead<CR>", opt)
+vim.keymap.set("n", "<leader>go", ":HeadhunterTakeOrigin<CR>", opt)
+vim.keymap.set("n", "<leader>gb", ":HeadhunterTakeBoth<CR>", opt)
+vim.keymap.set("n", "<leader>gq", ":HeadhunterQuickfix<CR>", opt)
+vim.keymap.set("n", "[g", ":HeadhunterPrevious<CR>", opt)
+vim.keymap.set("n", "]g", ":HeadhunterNext<CR>", opt)

@@ -257,6 +257,35 @@ require("lazy").setup({
             vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
         end
     },
+    -- LazyGit插件支持
+    {
+        "kdheepak/lazygit.nvim",
+        lazy = false,
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("telescope").load_extension("lazygit")
+        end,
+    },
+    -- neovim内解决git冲突
+    {
+        "StackInTheWild/headhunter.nvim",
+        config = function()
+            require("headhunter").setup({
+                keys = false
+            })
+        end,
+    },
 })
 
 -- -- 启动插件
@@ -283,7 +312,17 @@ require('nvim-autopairs').setup({
     disable_filetype = { "TelescopePrompt", "vim" },
 })
 
-require('gitsigns').setup()
+require('gitsigns').setup({
+    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        delay = 1000,
+        ignore_whitespace = false,
+        virt_text_priority = 100,
+        use_focus = true,
+    },
+})
 
 require("luasnip").setup({
     history = true,
