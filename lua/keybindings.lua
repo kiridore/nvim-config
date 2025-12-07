@@ -133,11 +133,3 @@ map("n", ",", "<Plug>(clever-f-repeat-back)", opt)
 
 vim.keymap.set("n", "<leader>gm", require("telescope.builtin").marks, opt)
 
--- headhunter
-
-vim.keymap.set("n", "<leader>gh", ":HeadhunterTakeHead<CR>", opt)
-vim.keymap.set("n", "<leader>go", ":HeadhunterTakeOrigin<CR>", opt)
-vim.keymap.set("n", "<leader>gb", ":HeadhunterTakeBoth<CR>", opt)
-vim.keymap.set("n", "<leader>gq", ":HeadhunterQuickfix<CR>", opt)
-vim.keymap.set("n", "[g", ":HeadhunterPrevious<CR>", opt)
-vim.keymap.set("n", "]g", ":HeadhunterNext<CR>", opt)
