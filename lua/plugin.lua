@@ -278,13 +278,23 @@ require("lazy").setup({
         end,
     },
     -- neovim内解决git冲突
+    -- {
+    --     "StackInTheWild/headhunter.nvim",
+    --     config = function()
+    --         require("headhunter").setup({
+    --             keys = false
+    --         })
+    --     end,
+    -- },
+    -- flutter
     {
-        "StackInTheWild/headhunter.nvim",
-        config = function()
-            require("headhunter").setup({
-                keys = false
-            })
-        end,
+        'nvim-flutter/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
     },
 })
 
@@ -368,3 +378,5 @@ require("tiny-inline-diagnostic").setup({
     -- Available options: "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
     preset = "powerline",
 })
+
+require("flutter-tools").setup {} -- use defaults
