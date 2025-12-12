@@ -22,6 +22,9 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>y", "\"+y", opt)
 map("n", "<leader>p", "\"+p", opt)
 
+map("v", "<leader>y", "\"+y", opt)
+map("v", "<leader>p", "\"+p", opt)
+
 -- 搜索时填充very magic标识
 map("n", "/", "/\\v", opt)
 map("v", "/", "/\\v", opt)
