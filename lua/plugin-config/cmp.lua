@@ -37,6 +37,7 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp', max_item_count = 350 },
@@ -104,6 +105,7 @@ cmp.setup({
             return vim_item
         end,
     },
+    preselect = cmp.PreselectMode.None
 })
 
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
@@ -140,7 +142,11 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 vim.lsp.config('clangd', {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = {
+        "clangd",
+        "--query-driver=C:/msys64/mingw64/bin/*"
+    }
 })
 vim.lsp.enable('clangd')
 
@@ -148,3 +154,16 @@ vim.lsp.config('lua_ls', {
     capabilities = capabilities
 })
 vim.lsp.enable('lua_ls')
+
+vim.lsp.config('rust_analyzer', {
+      capabilities = capabilities,
+      settings = {
+        ["rust-analyzer"] = {
+          check = {
+            command = "clippy",
+          },
+        },
+      },
+})
+
+vim.lsp.enable('rust_analyzer')
