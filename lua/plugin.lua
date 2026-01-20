@@ -253,7 +253,6 @@ require("lazy").setup({
         event = "VeryLazy",
         priority = 1000,
         config = function()
-            require('tiny-inline-diagnostic').setup()
             vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
         end
     },
@@ -286,16 +285,13 @@ require("lazy").setup({
     --         })
     --     end,
     -- },
-    -- flutter
     {
-        'nvim-flutter/flutter-tools.nvim',
-        lazy = false,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- optional for vim.ui.select
-        },
-        config = true,
-    },
+        'saecki/crates.nvim',
+        tag = 'stable',
+        config = function()
+            require('crates').setup()
+        end,
+    }
 })
 
 -- -- 启动插件
@@ -377,6 +373,10 @@ require("tiny-inline-diagnostic").setup({
     -- Style preset for diagnostic messages
     -- Available options: "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
     preset = "powerline",
+    options = {
+        show_source = {
+            enable = true,
+            if_many = false,
+        }
+    }
 })
-
-require("flutter-tools").setup {} -- use defaults

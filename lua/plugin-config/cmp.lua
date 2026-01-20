@@ -52,6 +52,7 @@ cmp.setup({
             }
         },
         { name = 'path' },
+        { name = 'crates' },
     }),
     experimental = {
         -- ghost_text = {
