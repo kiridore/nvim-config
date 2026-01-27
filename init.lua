@@ -13,6 +13,7 @@ require('plugin-config.glance')
 require('plugin-config.illuminate')
 require('plugin-config.copilot')
 require('plugin-config.crate')
+require('plugin-config.codecompanion')
 
 
 require('lsp_config')
@@ -24,4 +25,3 @@ require('dap_config')
 
 -- 快捷键绑定
 require("keybindings")
-
