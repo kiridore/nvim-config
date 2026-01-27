@@ -291,7 +291,18 @@ require("lazy").setup({
         config = function()
             require('crates').setup()
         end,
-    }
+    },
+    -- Plugin: olimorris/codecompanion.nvim (AI code assistant)
+    {
+        "olimorris/codecompanion.nvim",
+        version = "^18.0.0",
+        opts = {
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
 })
 
 -- -- 启动插件

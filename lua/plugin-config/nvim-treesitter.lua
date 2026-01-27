@@ -18,7 +18,7 @@ treesitter.setup({
         "c", "cpp", "vim", "lua", "cmake",
         "verilog", "python", "xml",
         "markdown_inline", "markdown", "hlsl", "glsl",
-        "javascript"
+        "javascript", "yaml"
     },
     -- 启用代码高亮模块
     highlight = {

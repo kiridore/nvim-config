@@ -162,3 +162,11 @@ vim.keymap.set("n", "<leader>cR", crates.open_repository, opts)
 vim.keymap.set("n", "<leader>cD", crates.open_documentation, opts)
 vim.keymap.set("n", "<leader>cC", crates.open_crates_io, opts)
 vim.keymap.set("n", "<leader>cL", crates.open_lib_rs, opts)
+
+-- CodeCompanion
+vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
