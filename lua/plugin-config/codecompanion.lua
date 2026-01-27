@@ -12,4 +12,11 @@ require("codecompanion").setup({
     opts = {
         log_level = "DEBUG",
     },
+    prompt_library = {
+        markdown = {
+            dirs = {
+                vim.fn.stdpath("config") .. "/prompts", -- Can be relative
+            },
+        },
+    }
 })
