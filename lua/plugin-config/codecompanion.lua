@@ -10,6 +10,7 @@ require("codecompanion").setup({
         },
     },
     opts = {
+        language = "Chinese",
         log_level = "DEBUG",
     },
     -- prompt_library = {
