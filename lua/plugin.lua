@@ -303,6 +303,7 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter",
         },
     },
+    { 'nvim-mini/mini.nvim', version = false },
 })
 
 -- -- 启动插件
@@ -391,3 +392,5 @@ require("tiny-inline-diagnostic").setup({
         }
     }
 })
+
+require('mini.icons').setup()

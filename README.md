@@ -23,4 +23,9 @@ mingw-w64-x86_64-neovim 用来编辑
 mingw-w64-x86_64-clang 提供了 clang-format 格式化工具
 mingw-w64-x86_64-clang-tools-extra 提供了 clangd, clang-tidy 一类 lint 工具
 ```
+
+### Tree-sitter
++ TS必备可执行  (Treesitter)[https://github.com/tree-sitter/tree-sitter/]
+### luarocks
++ lazy需要的lua包管理工具   (luarocks)[https://luarocks.org/]
 [参考博客](https://www.rayalto.pro/2023/10/29/minimal-nvim-with-lsp-on-windows-mingw64-msys2/)
