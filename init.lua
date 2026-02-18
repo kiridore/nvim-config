@@ -25,3 +25,6 @@ require('dap_config')
 
 -- 快捷键绑定
 require("keybindings")
+
+-- godot引擎相关设置
+require("godot")
