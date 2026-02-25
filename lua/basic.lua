@@ -8,7 +8,7 @@ vim.o.sidescrolloff = 8
 
 -- 使用相对行号
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 
 -- 高亮所在行
 vim.wo.cursorline = true
@@ -78,8 +78,8 @@ vim.opt.termguicolors = true
 -- 是否显示不可见字符
 vim.o.list = true
 
--- 将空格显示为一个点
-vim.o.listchars = "space:·"
+-- 显示不可见字符
+vim.o.listchars = "tab:▸ ,trail:·,nbsp:␣"
 
 -- 补全增强
 vim.o.wildmenu = true
@@ -102,7 +102,19 @@ vim.o.background = "dark"
 
 -- 显示诊断信息
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = {
+        prefix = "●",
+        spacing = 4,
+    },
     virtual_lines = false,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+    },
 })
-
