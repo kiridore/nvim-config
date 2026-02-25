@@ -43,7 +43,7 @@ require("lazy").setup({
             function()
                 require("catppuccin").setup()
                 ---- 暂时把颜色修改写在这里，保证bufferlline插件加载时一定能获取到
-                vim.cmd([[colorscheme catppuccin]])
+                vim.cmd([[colorscheme everforest]])
             end
     },
     -- 更好的开始界面
