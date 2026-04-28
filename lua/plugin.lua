@@ -172,8 +172,6 @@ require("lazy").setup({
     { "dstein64/nvim-scrollview" },
     -- 大文件编辑优化
     { "LunarVim/bigfile.nvim" },
-    -- git diff 查看 VDI无法运行
-    { "sindrets/diffview.nvim" },
     -- 更好的terminal
     {
         'akinsho/toggleterm.nvim',
