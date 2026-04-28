@@ -236,12 +236,10 @@ require("lazy").setup({
             -- Your setup opts here
         },
     },
-    -- 高亮光标下面的符号, A-n A-p上下切换
-    { "RRethy/vim-illuminate" },
     -- 自动高亮颜色值
     { "norcalli/nvim-colorizer.lua" },
-    -- AI
-    { "zbirenbaum/copilot.lua" },
+    -- -- AI
+    -- { "zbirenbaum/copilot.lua" },
     -- 更好的书签管理工具
     {
         "chentoast/marks.nvim",
@@ -304,26 +302,22 @@ require("lazy").setup({
         },
     },
     { 'nvim-mini/mini.nvim', version = false },
+    -- 粘贴图片
+    {
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add options here
+            -- or leave it empty to use the default settings
+        },
+        keys = {
+            -- suggested keymap
+            -- { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+        },
+    }
 })
 
 -- -- 启动插件
--- require('bufferline').setup({
---     options = {
---         numbers = "ordinal",
---         indicator = {
---             style = "icon"
---         },
---         diagnostic = "nvim_lsp",
---         offsets = {
---             {
---                 filetype = "NvimTree",
---                 text = "File Explorer",
---                 text_align = "center",
---                 separator = true
---             }
---         },
---     }
--- })
 require('lualine').setup()
 
 require('nvim-autopairs').setup({
@@ -364,7 +358,6 @@ require("bigfile").setup {
     pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
     features = {       -- features to disable
         "indent_blankline",
-        "illuminate",
         "lsp",
         "treesitter",
         "syntax",
