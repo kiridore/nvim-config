@@ -254,35 +254,6 @@ require("lazy").setup({
             vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
         end
     },
-    -- LazyGit插件支持
-    {
-        "kdheepak/lazygit.nvim",
-        lazy = false,
-        cmd = {
-            "LazyGit",
-            "LazyGitConfig",
-            "LazyGitCurrentFile",
-            "LazyGitFilter",
-            "LazyGitFilterCurrentFile",
-        },
-        -- optional for floating window border decoration
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            require("telescope").load_extension("lazygit")
-        end,
-    },
-    -- neovim内解决git冲突
-    -- {
-    --     "StackInTheWild/headhunter.nvim",
-    --     config = function()
-    --         require("headhunter").setup({
-    --             keys = false
-    --         })
-    --     end,
-    -- },
     {
         'saecki/crates.nvim',
         tag = 'stable',

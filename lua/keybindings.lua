@@ -70,9 +70,6 @@ map("t", "<ESC><ESC>", "<C-\\><C-n>", opt)
 map("n", "<C-\\>", "<Cmd>ToggleTerm direction=horizontal<CR>", opt)
 map("i", "<C-\\>", "<ESC><Cmd>ToggleTerm direction=horizontal<CR>", opt)
 
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opt)
-vim.keymap.set("n", "<leader>gf", ":LazyGitFilterCurrentFile<CR>", opt)
-
 -- trouble
 map("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle <CR>", opt)
 map("n", "<leader>xl", "<Cmd>Trouble lsp toggle win.position=right<CR>", opt)
