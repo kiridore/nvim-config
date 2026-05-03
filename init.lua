@@ -11,7 +11,6 @@ require('plugin-config.cmp')
 require('plugin-config.lspsaga')
 require('plugin-config.glance')
 require('plugin-config.crate')
-require('plugin-config.codecompanion')
 
 
 require('lsp_config')
